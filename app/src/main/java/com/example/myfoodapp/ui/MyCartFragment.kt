@@ -1,6 +1,8 @@
 package com.example.myfoodapp.ui
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -37,6 +39,8 @@ class MyCartFragment : Fragment() {
         list.add(CartModel(R.drawable.s4, "Order 4", "$30", "4.3"))
         list.add(CartModel(R.drawable.fav1, "Order 5", "$30", "4.3"))
         list.add(CartModel(R.drawable.ver1, "Order 6", "$30", "4.3"))
+
+        Log.d(TAG, "onViewCreated: $list")
 
         cartAdapter = CartAdapter(requireContext(), list)
         bind.cartRec.adapter = cartAdapter
